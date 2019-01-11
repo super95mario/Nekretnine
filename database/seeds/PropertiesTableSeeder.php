@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Property;
+
 class PropertiesTableSeeder extends Seeder
 {
     /**
@@ -11,8 +12,7 @@ class PropertiesTableSeeder extends Seeder
      */
     public function run()
     {
-       
-        Property::create(['area' =>'25.4','cadastral_number' =>'1523','property_type_id' =>'1','cadastral_municipality_id' =>'1']);
+        Property::create(['area' =>'25.4','cadastral_number' =>'1523','property_type_id' =>1,'cadastral_municipality_id' =>1]);
         
     }
 }

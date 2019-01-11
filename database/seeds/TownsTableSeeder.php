@@ -12,6 +12,6 @@ class TownsTableSeeder extends Seeder
      */
     public function run()
     {
-        Town::create(['name' =>'Tovarnik','municipality_id' =>'1','cadastral_municipality_id' =>'1']);
+        Town::create(['name' =>'Tovarnik','municipality_id' =>1,'cadastral_municipality_id' =>1]);
     }
 }

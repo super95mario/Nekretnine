@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\County;
+
 class CountiesTableSeeder extends Seeder
 {
     /**
@@ -11,7 +12,6 @@ class CountiesTableSeeder extends Seeder
      */
     public function run()
     {
-        
-County::create(['name' =>'Vukovarsko-Srijemsa']);
+        County::create(['name' =>'Vukovarsko-Srijemska']);
     }
 }

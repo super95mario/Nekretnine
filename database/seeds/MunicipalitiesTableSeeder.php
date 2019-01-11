@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Municipality;
+
 class MunicipalitiesTableSeeder extends Seeder
 {
     /**
@@ -11,7 +12,6 @@ class MunicipalitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        
         Municipality::create(['name' =>'Tovarnik','county_id' =>1]);
     }
 }

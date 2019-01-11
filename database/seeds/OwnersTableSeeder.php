@@ -12,7 +12,6 @@ class OwnersTableSeeder extends Seeder
      */
     public function run()
     {
-Owner::create(['oib' =>'15761853761','name' =>'Marko','surname' =>'Markovic','username' =>'user','password' =>'user','address' =>'rudzera boskovica 26','town_id' =>'1']);
-
+        Owner::create(['oib' =>'15761853761','name' =>'Marko','surname' =>'Markovic','username' =>'user','password' =>'user','address' =>'rudzera boskovica 26','town_id' =>1]);
     }
 }
