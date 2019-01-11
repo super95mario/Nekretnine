@@ -13,8 +13,7 @@ class CountyController extends Controller
      */
     public function index()
     {
-        $counties = \App\County::paginate();
-        return view('counties/index', ['counties'=>$counties]);
+        
         $counties = \App\County::with('municipalities')->paginate();
         return view('counties/index', ['counties' => $counties]);
     }

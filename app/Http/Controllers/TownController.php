@@ -13,9 +13,8 @@ class TownController extends Controller
      */
     public function index()
     {
-        $towns = \App\Town::paginate();
-        return view('towns/index', ['towns'=>$towns]);
-        $towns = \App\Town::with('cadastral_municipality', 'owner', 'municipality')->paginate();
+        
+        $towns = \App\Town::with('cadastral_municipality', 'owners', 'municipality')->paginate();
         return view('towns/index', ['towns' => $towns]);
     }
 

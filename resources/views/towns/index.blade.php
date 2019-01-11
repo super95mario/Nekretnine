@@ -17,8 +17,8 @@
     <tr>
       <td><?= $town->id ?></td>
       <td><?= $town->name ?></td>
-      <td><?= $town->municipality_id ?></td>
-      <td><?= $town->cadastral_municipality_id ?></td>
+      <td><?= $town->municipality->name ?></td>
+      <td><?= $town->cadastral_municipality->name ?></td>
     </tr>
   @endforeach
   </tbody>

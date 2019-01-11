@@ -22,6 +22,30 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/documents">Documents <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastral_municipalities">cadastral_municipalities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/counties">counties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/municipalities">municipalities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/owner_property">owner_properties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/owners">owners</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/properties">properties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/property_types">property_types</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/towns">towns</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -36,3 +60,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+

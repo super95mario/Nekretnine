@@ -13,9 +13,8 @@ class CadastralMunicipalityController extends Controller
      */
     public function index()
     {
-        $cadastral_municipalities = \App\CadastralMunicipality::paginate();
-        return view('cadastral_municipalities/index', ['cadastral_municipalities'=>$cadastral_municipalities]);
-        $cadastral_municipalities = \App\CadastralMunicipality::with('property','town')->paginate();
+        
+        $cadastral_municipalities = \App\CadastralMunicipality::with('property','towns')->paginate();
         return view('cadastral_municipalities/index', ['cadastral_municipalities' => $cadastral_municipalities]);
     }
 

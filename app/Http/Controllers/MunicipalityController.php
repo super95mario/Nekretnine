@@ -13,8 +13,7 @@ class MunicipalityController extends Controller
      */
     public function index()
     {
-        $municipalities = \App\Municipality::paginate();
-        return view('municipalities/index', ['municipalities'=>$municipalities]);
+        
         $municipalities = \App\Municipality::with('county', 'towns')->paginate();
         return view('municipalities/index', ['municipalities' => $municipalities]);
     }

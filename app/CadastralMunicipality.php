@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class CadastralMunicipality extends Model
 {
     protected $fillable = ['name'];
-    public function properties()
+    public function property()
     {
         return $this->hasMany(\App\Property::class);
     }
-    public function town()
+    public function towns()
     {
-        return $this->belongsTo(\App\Town::class);
+        return $this->hasMany(\App\Town::class);
     }
 }
