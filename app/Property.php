@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     protected $fillable = ['area','cadastral_number','property_type_id','cadastral_municipality_id'];
-    public function owners()
+    public function ownerproperty()
     {
-        return $this->belongsToMany(\App\Owner::class);
+        return $this->hasMany(\App\OwnerProperty::class);
     }
 
     public function cadastral_municipality()

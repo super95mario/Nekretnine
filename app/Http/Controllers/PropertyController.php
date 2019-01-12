@@ -13,9 +13,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = \App\Property::paginate();
-        return view('properties/index', ['properties'=>$properties]);
-        $properties = \App\Property::with('property_type', 'cadastral_municipality', 'owner')->paginate();
+        
+        $properties = \App\Property::with('property_type', 'cadastral_municipality', 'ownerproperty')->paginate();
         return view('properties/index', ['properties' => $properties]);
     }
 

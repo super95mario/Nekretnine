@@ -13,9 +13,8 @@ class PropertyTypeController extends Controller
      */
     public function index()
     {
-        $property_types = \App\PropertyType::paginate();
-        return view('property_types/index', ['property_types'=>$property_types]);
-        $property_types = \App\PropertyType::with('property')->paginate();
+        
+        $property_types = \App\PropertyType::with('properties')->paginate();
         return view('property_types/index', ['property_types' => $property_types]);
     }
 
