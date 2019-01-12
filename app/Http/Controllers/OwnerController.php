@@ -13,9 +13,8 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        $owners = \App\Owner::paginate();
-        return view('owners/index', ['owners'=>$owners]);
-        $owners = \App\Owner::with('property', 'town')->paginate();
+        
+        $owners = \App\Owner::with('ownerproperty', 'town')->paginate();
         return view('owners/index', ['owners' => $owners]);
     }
 

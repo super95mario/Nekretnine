@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<a class="btn btn-primary float-right" href="/property_types/new">New</a>
 
 <table class="table">
   <thead>

@@ -5,9 +5,7 @@
 <form method="post" action="/towns">
 @csrf
 
-<div class="form-group">
-    <input class="form-control" name="id" type="text" placeholder="Town id">
-</div>
+
 <div class="form-group">
     <input class="form-control" name="name" type="text" placeholder="Town name">
 </div>

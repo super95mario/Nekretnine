@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="btn btn-primary float-right" href="/cities/new">New</a>
+<a class="btn btn-primary float-right" href="/towns/new">New</a>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">name</th>
-      <th scope="col">municipality_id</th>
-      <th scope="col">cadastral_municipality_id</th>
+      <th scope="col">municipality_name</th>
+      <th scope="col">cadastral_municipality_name</th>
     </tr>
   </thead>
   <tbody>

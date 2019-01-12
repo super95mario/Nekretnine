@@ -5,9 +5,7 @@
 <form method="post" action="/cadastral_municipalities">
 @csrf
 
-<div class="form-group">
-    <input class="form-control" name="id" type="text" placeholder="Cadastral_municipalities id">
-</div>
+
 <div class="form-group">
     <input class="form-control" name="name" type="text" placeholder="Cadastral_municipalities name">
 </div>

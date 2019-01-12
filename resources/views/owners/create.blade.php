@@ -5,9 +5,7 @@
 <form method="post" action="/owners">
 @csrf
 
-<div class="form-group">
-    <input class="form-control" name="id" type="text" placeholder="Owner id">
-</div>
+
 <div class="form-group">
     <input class="form-control" name="oib" type="text" placeholder="Owner oib">
 </div>

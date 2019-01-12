@@ -5,9 +5,7 @@
 <form method="post" action="/properties">
 @csrf
 
-<div class="form-group">
-    <input class="form-control" name="id" type="text" placeholder="Property id">
-</div>
+
 <div class="form-group">
     <input class="form-control" name="area" type="text" placeholder="Property area">
 </div>

@@ -5,9 +5,7 @@
 <form method="post" action="/owner_properties">
 @csrf
 
-<div class="form-group">
-    <input class="form-control" name="id" type="text" placeholder="Owner_property id">
-</div>
+
 <div class="form-group">
     <input class="form-control" name="percentage" type="text" placeholder="Owner_property percentage">
 </div>

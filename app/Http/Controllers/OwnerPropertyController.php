@@ -13,8 +13,9 @@ class OwnerPropertyController extends Controller
      */
     public function index()
     {
-        $owner_properties = \App\OwnerProperty::paginate();
+        $owner_properties = \App\OwnerProperty::with('owner', 'property')->paginate();
         return view('owner_properties/index', ['owner_properties'=>$owner_properties]);
+        
     }
 
     /**

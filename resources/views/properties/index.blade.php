@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<a class="btn btn-primary float-right" href="/properties/new">New</a>
 
 <table class="table">
   <thead>
@@ -8,8 +9,8 @@
       <th scope="col">#</th>
       <th scope="col">area</th>
       <th scope="col">cadastral_number</th>
-	<th scope="col">property_type_id</th>
-	<th scope="col">cadastral_municipality_id</th>
+	<th scope="col">property_type_name</th>
+	<th scope="col">cadastral_municipality_name</th>
     </tr>
   </thead>
   <tbody>
@@ -18,29 +19,12 @@
       <td><?= $property->id ?></td>
       <td><?= $property->area ?></td>
       <td><?= $property->cadastral_number ?></td>
-	<td><?= $property->property_type_id ?></td>
-	<td><?= $property->cadastral_municipality_id ?></td>
+      <td><?= $property->property_type->name ?></td>
+      <td><?= $property->cadastral_municipality->name ?></td>
+	
     </tr>
   @endforeach
   </tbody>
 </table>
 
 @endsection
-@foreach ($properties as $property)
-<a class="btn btn-primary float-right" href="/properties/new">New</a>
-    <tr>
-        <td><?= $property->area ?></td>
-	<td><?= $property->cadastral_number ?></td>
-	<td><?= $property->property_type_id ?></td>
-	<td><?= $property->cadastral_municipality_id ?></td>
-	<td><?= $property->owner->oib ?></td>
-	<td><?= $property->owner->name ?></td>
-	<td><?= $property->owner->surname ?></td>
-	<td><?= $property->owner->username ?></td>
-	<td><?= $property->owner->password ?></td>
-	<td><?= $property->owner->address ?></td>
-	<td><?= $property->owner->town_id ?></td>
-	<td><?= $property->cadastral_municipality->name ?></td>
-	<td><?= $property->property_type->name ?></td>
-    </tr>
-@endforeach

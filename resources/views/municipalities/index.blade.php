@@ -7,7 +7,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">name</th>
-      <th scope="col">county</th>
+      <th scope="col">county_name</th>
     </tr>
   </thead>
   <tbody>
