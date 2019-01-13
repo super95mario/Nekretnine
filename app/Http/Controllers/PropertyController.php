@@ -39,8 +39,8 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         $validator = \Validator::make($request->all(), [
-            'area' => 'required',
-            'cadastral_number' => 'required',
+            'area' => 'required|numeric|between:0.01,9999.99',
+            'cadastral_number' => 'required|numeric|digits_between:1,10',
             'property_type_id' => 'required',
             'cadastral_municipality_id' => 'required'
         ]);

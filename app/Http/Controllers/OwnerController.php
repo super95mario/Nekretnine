@@ -38,12 +38,12 @@ class OwnerController extends Controller
     public function store(Request $request)
     {
         $validator = \Validator::make($request->all(), [
-            'oib' => 'required',
+            'oib' => 'required|digits:11',
             'name' => 'required|max:255',
-            'surname' => 'required',
-            'username' => 'required',
-            'password' => 'required',
-            'address' => 'required',
+            'surname' => 'required|max:255',
+            'username' => 'required|max:255',
+            'password' => 'required|max:255',
+            'address' => 'required|max:255',
             'town_id' => 'required'
             
         ]);
