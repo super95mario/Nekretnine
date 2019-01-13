@@ -12,6 +12,6 @@ class CadastralMunicipalitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        CadastralMunicipality::create(['name' =>'Tovarnik']);
+        CadastralMunicipality::create(['name' =>'KO Tovarnik']);
     }
 }

@@ -39,7 +39,7 @@ class OwnerPropertyController extends Controller
     public function store(Request $request)
     {
         $validator = \Validator::make($request->all(), [
-            'percentage' => 'required',
+            'percentage' => 'required|between:0.01,1.0|numeric',
             'owner_id' => 'required',
             'property_id' => 'required'
         ]);
