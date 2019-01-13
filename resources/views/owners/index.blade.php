@@ -2,10 +2,10 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="btn btn-primary float-right" href="/owners/new">New</a>
+<a class="btn btn-success float-left" href="/owners/new">New</a>
 
 <table class="table">
-  <thead>
+  <thead class="thead-dark">
     <tr>
     <th scope="col">#</th>
     <th scope="col">oib</th>
@@ -15,7 +15,7 @@
       <th scope="col">password</th>
       <th scope="col">address</th>
       <th scope="col">town_name</th>
-      <th scope="col">Akcija</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>

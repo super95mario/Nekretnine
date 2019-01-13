@@ -31,7 +31,7 @@
     </select>
 </div>
 
-<button type="submit" class="btn btn-success">Submit</button>
+<button type="submit" class="btn btn-warning">Submit</button>
 </form>
 
 @endsection

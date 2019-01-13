@@ -17,7 +17,7 @@
     <input class="form-control" name="name" type="text" placeholder="Property_type name">
 </div>
 
-<button type="submit" class="btn btn-success">Submit</button>
+<button type="submit" class="btn btn-warning">Submit</button>
 </form>
 
 @endsection

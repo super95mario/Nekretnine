@@ -13,8 +13,11 @@
 @csrf
 
 
-<div class="form-group">
-    <input class="form-control" name="area" type="text" placeholder="Property area">
+<div class="input-group mb-3">
+  <input type="text" class="form-control" name="area" placeholder="Property area" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">M^2</span>
+  </div>
 </div>
 <div class="form-group">
     <input class="form-control" name="cadastral_number" type="text" placeholder="Property cadastral_number">
@@ -35,7 +38,7 @@
 </div>
 
 
-<button type="submit" class="btn btn-success">Submit</button>
+<button type="submit" class="btn btn-warning">Submit</button>
 </form>
 
 @endsection

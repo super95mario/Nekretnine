@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="btn btn-primary float-right" href="/property_types/new">New</a>
+<a class="btn btn-success float-left" href="/property_types/new">New</a>
 
 <table class="table">
-  <thead>
+  <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Akcija</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
