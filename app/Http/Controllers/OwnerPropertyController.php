@@ -25,7 +25,9 @@ class OwnerPropertyController extends Controller
      */
     public function create()
     {
-        return view('owner_properties/create');
+        $owners = \App\Owner::all();
+        $properties = \App\Property::all();
+        return view('owner_properties/create', ['owners' => $owners, 'properties' => $properties]);
     }
 
     /**
@@ -36,9 +38,20 @@ class OwnerPropertyController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'percentage' => 'required',
+            'owner_id' => 'required',
+            'property_id' => 'required'
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('OwnerPropertyController@create')
+                ->withErrors($validator);
+        }
+
         $data = $request->input();
-        \App\Ownerproperty::create($data);
-        return redirect()->action('OwnerpropertyController@index');
+        \App\OwnerProperty::create($data);
+        return redirect()->action('OwnerPropertyController@index');
     }
 
     /**
@@ -83,6 +96,7 @@ class OwnerPropertyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\OwnerProperty::destroy($id);
+        return redirect()->action('OwnerPropertyController@index');
     }
 }

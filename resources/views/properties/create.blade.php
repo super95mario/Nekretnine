@@ -1,8 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+@if($errors->count() > 0)
+    <div class="alert alert-danger" role="alert">
+        @foreach($errors->all() as $message)
+            <?= $message ?>
+        @endforeach
+    </div>
+@endif
 
-<form method="post" action="/properties">
+<form method="post" action="/properties" class="col-md-5 mx-auto">
 @csrf
 
 
@@ -13,11 +20,20 @@
     <input class="form-control" name="cadastral_number" type="text" placeholder="Property cadastral_number">
 </div>
 <div class="form-group">
-    <input class="form-control" name="property_type_id" type="text" placeholder="Property property_type_id">
+    <select class="form-control" name="cadastral_municipality_id">
+        @foreach($cadastral_municipalities as $cadastral_municipality)
+        <option value="{{ $cadastral_municipality->id }}">{{ $cadastral_municipality->name }}</option>
+        @endforeach
+    </select>
 </div>
 <div class="form-group">
-    <input class="form-control" name="cadastral_municipality_id" type="text" placeholder="Property cadastral_municipality_id">
+    <select class="form-control" name="property_type_id">
+        @foreach($property_types as $property_type)
+        <option value="{{ $property_type->id }}">{{ $property_type->name }}</option>
+        @endforeach
+    </select>
 </div>
+
 
 <button type="submit" class="btn btn-success">Submit</button>
 </form>

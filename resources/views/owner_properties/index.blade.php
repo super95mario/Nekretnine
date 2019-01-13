@@ -10,6 +10,7 @@
       <th scope="col">percentage</th>
       <th scope="col">owner_name</th>
       <th scope="col">property_area</th>
+      <th scope="col">Akcija</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,7 @@
       <td><?= $owner_property->percentage ?></td>
       <td><?= $owner_property->owner->name ?></td>
       <td><?= $owner_property->property->area ?></td>
+      <td><a href="/owner_properties/delete/{{ $owner_property->id }}" class="btn btn-sm btn-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

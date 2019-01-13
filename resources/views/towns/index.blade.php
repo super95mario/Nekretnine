@@ -10,6 +10,7 @@
       <th scope="col">name</th>
       <th scope="col">municipality_name</th>
       <th scope="col">cadastral_municipality_name</th>
+      <th scope="col">Akcija</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,7 @@
       <td><?= $town->name ?></td>
       <td><?= $town->municipality->name ?></td>
       <td><?= $town->cadastral_municipality->name ?></td>
+      <td><a href="/towns/delete/{{ $town->id }}" class="btn btn-sm btn-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

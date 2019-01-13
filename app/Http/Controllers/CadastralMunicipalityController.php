@@ -25,7 +25,8 @@ class CadastralMunicipalityController extends Controller
      */
     public function create()
     {
-        return view('cadastral_municipalities/create');      
+        $towns = \App\Town::all();
+        return view('cadastral_municipalities/create', ['towns' => $towns]);      
     }
 
     /**
@@ -36,9 +37,19 @@ class CadastralMunicipalityController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('CadastralMunicipalityController@create')
+                ->withErrors($validator);
+        }
+
         $data = $request->input();
-        \App\Cadastralmunicipality::create($data);
-        return redirect()->action('CadastralmunicipalityController@index');
+        \App\CadastralMunicipality::create($data);
+        return redirect()->action('CadastralMunicipalityController@index');
     }
 
     /**
@@ -83,6 +94,7 @@ class CadastralMunicipalityController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\CadastralMunicipality::destroy($id);
+        return redirect()->action('CadastralMunicipalityController@index');
     }
 }

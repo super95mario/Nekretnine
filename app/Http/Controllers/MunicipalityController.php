@@ -25,7 +25,8 @@ class MunicipalityController extends Controller
      */
     public function create()
     {
-        return view('municipalities/create');
+        $counties = \App\County::all();
+        return view('municipalities/create', ['counties' => $counties]);
     }
 
     /**
@@ -36,9 +37,20 @@ class MunicipalityController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'county_id' => 'required'
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('MunicipalityController@create')
+                ->withErrors($validator);
+        }
+
         $data = $request->input();
         \App\Municipality::create($data);
         return redirect()->action('MunicipalityController@index');
+        
     }
 
     /**
@@ -83,6 +95,7 @@ class MunicipalityController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Municipality::destroy($id);
+        return redirect()->action('MunicipalityController@index');
     }
 }

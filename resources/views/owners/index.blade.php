@@ -15,6 +15,7 @@
       <th scope="col">password</th>
       <th scope="col">address</th>
       <th scope="col">town_name</th>
+      <th scope="col">Akcija</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +29,7 @@
       <td><?= $owner->password ?></td>
       <td><?= $owner->address ?></td>
       <td><?= $owner->town->name ?></td>
+      <td><a href="/owners/delete/{{ $owner->id }}" class="btn btn-sm btn-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

@@ -8,6 +8,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
+      <th scope="col">Akcija</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
     <tr>
       <td><?= $property_type->id ?></td>
       <td><?= $property_type->name ?></td>
+      <td><a href="/property_types/delete/{{ $property_type->id }}" class="btn btn-sm btn-danger">X</a></td>
     </tr>
   @endforeach
   </tbody>

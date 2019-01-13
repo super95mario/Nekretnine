@@ -8,6 +8,8 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">name</th>
+      <th scope="col">Akcija</th>
+      
       
       
     </tr>
@@ -17,6 +19,7 @@
     <tr>
       <td><?= $cadastral_municipality->id ?></td>
       <td><?= $cadastral_municipality->name ?></td>
+      <td><a href="/cadastral_municipalities/delete/{{ $cadastral_municipality->id }}" class="btn btn-sm btn-danger">X</a></td>
       
       
     </tr>

@@ -17,9 +17,9 @@ class CreatePropertiesTable extends Migration
             $table->decimal('area', 6, 2);
             $table->unsignedInteger('cadastral_number');
             $table->unsignedInteger('property_type_id');
-            $table->foreign('property_type_id')->references('id')->on('property_types');
+            $table->foreign('property_type_id')->references('id')->on('property_types')->onDelete('cascade');
             $table->unsignedInteger('cadastral_municipality_id');
-            $table->foreign('cadastral_municipality_id')->references('id')->on('cadastral_municipalities');
+            $table->foreign('cadastral_municipality_id')->references('id')->on('cadastral_municipalities')->onDelete('cascade');
             $table->timestamps();
         });
     }

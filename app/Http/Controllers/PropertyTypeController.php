@@ -36,9 +36,19 @@ class PropertyTypeController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('PropertyTypeController@create')
+                ->withErrors($validator);
+        }
+
         $data = $request->input();
-        \App\Propertytype::create($data);
-        return redirect()->action('PropertytypeController@index');
+        \App\PropertyType::create($data);
+        return redirect()->action('PropertyTypeController@index');
     }
 
     /**
@@ -83,6 +93,7 @@ class PropertyTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\PropertyType::destroy($id);
+        return redirect()->action('PropertyTypeController@index');
     }
 }

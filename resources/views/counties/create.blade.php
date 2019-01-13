@@ -1,8 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+@if($errors->count() > 0)
+    <div class="alert alert-danger" role="alert">
+        @foreach($errors->all() as $message)
+            <?= $message ?>
+        @endforeach
+    </div>
+@endif
 
-<form method="post" action="/counties">
+<form method="post" action="/counties" class="col-md-5 mx-auto">
 @csrf
 
 

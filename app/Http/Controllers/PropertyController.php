@@ -25,7 +25,9 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('properties/create');
+        $cadastral_municipalities = \App\CadastralMunicipality::all();
+        $property_types = \App\PropertyType::all();
+        return view('properties/create', ['cadastral_municipalities' => $cadastral_municipalities,'property_types' => $property_types]);
     }
 
     /**
@@ -36,8 +38,20 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'area' => 'required',
+            'cadastral_number' => 'required',
+            'property_type_id' => 'required',
+            'cadastral_municipality_id' => 'required'
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('PropertyController@create')
+                ->withErrors($validator);
+        }
+
         $data = $request->input();
-        App\Property::create($data);
+        \App\Property::create($data);
         return redirect()->action('PropertyController@index');
     }
 
@@ -83,6 +97,7 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Property::destroy($id);
+        return redirect()->action('PropertyController@index');
     }
 }

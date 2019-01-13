@@ -25,7 +25,8 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        return view('owners/create');
+        $towns = \App\Town::all();
+        return view('owners/create', ['towns' => $towns]);
     }
 
     /**
@@ -36,6 +37,22 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'oib' => 'required',
+            'name' => 'required|max:255',
+            'surname' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'address' => 'required',
+            'town_id' => 'required'
+            
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->action('OwnerController@create')
+                ->withErrors($validator);
+        }
+
         $data = $request->input();
         \App\Owner::create($data);
         return redirect()->action('OwnerController@index');
@@ -83,6 +100,7 @@ class OwnerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Owner::destroy($id);
+        return redirect()->action('OwnerController@index');
     }
 }

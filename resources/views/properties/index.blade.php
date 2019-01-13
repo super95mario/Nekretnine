@@ -11,6 +11,7 @@
       <th scope="col">cadastral_number</th>
 	<th scope="col">property_type_name</th>
 	<th scope="col">cadastral_municipality_name</th>
+  <th scope="col">Akcija</th>
     </tr>
   </thead>
   <tbody>
@@ -21,8 +22,8 @@
       <td><?= $property->cadastral_number ?></td>
       <td><?= $property->property_type->name ?></td>
       <td><?= $property->cadastral_municipality->name ?></td>
-	
-    </tr>
+      <td><a href="/properties/delete/{{ $property->id }}" class="btn btn-sm btn-danger">X</a></td>
+   </tr>
   @endforeach
   </tbody>
 </table>

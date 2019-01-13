@@ -21,7 +21,7 @@ class CreateOwnersTable extends Migration
             $table->string('password');
             $table->string('address');
             $table->unsignedInteger('town_id');
-            $table->foreign('town_id')->references('id')->on('towns');
+            $table->foreign('town_id')->references('id')->on('towns')->onDelete('cascade');
             $table->timestamps();
         });
     }

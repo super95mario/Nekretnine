@@ -16,9 +16,9 @@ class CreateOwnerPropertyTable extends Migration
             $table->increments('id');
             $table->decimal('percentage', 3, 2);
             $table->unsignedInteger('owner_id');
-            $table->foreign('owner_id')->references('id')->on('owners');
+            $table->foreign('owner_id')->references('id')->on('owners')->onDelete('cascade');
             $table->unsignedInteger('property_id');
-            $table->foreign('property_id')->references('id')->on('properties');
+            $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
             $table->timestamps();
         });
     }

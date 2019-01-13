@@ -16,7 +16,7 @@ class CreateMunicipalitiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('county_id');
-            $table->foreign('county_id')->references('id')->on('counties');
+            $table->foreign('county_id')->references('id')->on('counties')->onDelete('cascade');
             $table->timestamps();
         });
     }
