@@ -39,7 +39,7 @@ class TownController extends Controller
     public function store(Request $request)
     {
         $validator = \Validator::make($request->all(), [
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
             'municipality_id' => 'required',
             'cadastral_municipality_id' => 'required'
                         
